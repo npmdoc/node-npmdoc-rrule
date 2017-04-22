@@ -1,0 +1,3306 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="http://jakubroztocil.github.io/rrule/"
+
+    >rrule (v2.2.0)</a>
+</h1>
+<h4>JavaScript library for working with recurrence rules for calendar dates.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rrule">module rrule</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rrule.rrule">
+            function <span class="apidocSignatureSpan"></span>rrule
+            <span class="apidocSignatureSpan">(options, noCache)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rrule.RRule">
+            function <span class="apidocSignatureSpan">rrule.</span>RRule
+            <span class="apidocSignatureSpan">(options, noCache)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rrule.RRuleSet">
+            function <span class="apidocSignatureSpan">rrule.</span>RRuleSet
+            <span class="apidocSignatureSpan">(noCache)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rrule.fromString">
+            function <span class="apidocSignatureSpan">rrule.</span>fromString
+            <span class="apidocSignatureSpan">(string)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rrule.fromText">
+            function <span class="apidocSignatureSpan">rrule.</span>fromText
+            <span class="apidocSignatureSpan">(text, language)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rrule.optionsToString">
+            function <span class="apidocSignatureSpan">rrule.</span>optionsToString
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rrule.parseString">
+            function <span class="apidocSignatureSpan">rrule.</span>parseString
+            <span class="apidocSignatureSpan">(rfcString)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rrule.parseText">
+            function <span class="apidocSignatureSpan">rrule.</span>parseText
+            <span class="apidocSignatureSpan">(text, language)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rrule.rrulestr">
+            function <span class="apidocSignatureSpan">rrule.</span>rrulestr
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">rrule.</span>DAILY</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">rrule.</span>HOURLY</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">rrule.</span>MINUTELY</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">rrule.</span>MONTHLY</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">rrule.</span>SECONDLY</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">rrule.</span>WEEKLY</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">rrule.</span>YEARLY</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">rrule.</span>DEFAULT_OPTIONS</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">rrule.</span>FR</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">rrule.</span>FREQUENCIES</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">rrule.</span>MO</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">rrule.</span>RRule.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">rrule.</span>RRuleSet.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">rrule.</span>SA</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">rrule.</span>SU</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">rrule.</span>TH</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">rrule.</span>TU</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">rrule.</span>WE</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rrule.RRule">module rrule.RRule</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rrule.RRule.RRule">
+            function <span class="apidocSignatureSpan">rrule.</span>RRule
+            <span class="apidocSignatureSpan">(options, noCache)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rrule.RRule.RRuleSet">
+            function <span class="apidocSignatureSpan">rrule.RRule.</span>RRuleSet
+            <span class="apidocSignatureSpan">(noCache)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rrule.RRule.fromString">
+            function <span class="apidocSignatureSpan">rrule.RRule.</span>fromString
+            <span class="apidocSignatureSpan">(string)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rrule.RRule.fromText">
+            function <span class="apidocSignatureSpan">rrule.RRule.</span>fromText
+            <span class="apidocSignatureSpan">(text, language)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rrule.RRule.optionsToString">
+            function <span class="apidocSignatureSpan">rrule.RRule.</span>optionsToString
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rrule.RRule.parseString">
+            function <span class="apidocSignatureSpan">rrule.RRule.</span>parseString
+            <span class="apidocSignatureSpan">(rfcString)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rrule.RRule.parseText">
+            function <span class="apidocSignatureSpan">rrule.RRule.</span>parseText
+            <span class="apidocSignatureSpan">(text, language)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rrule.RRule.rrulestr">
+            function <span class="apidocSignatureSpan">rrule.RRule.</span>rrulestr
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">rrule.RRule.</span>DAILY</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">rrule.RRule.</span>HOURLY</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">rrule.RRule.</span>MINUTELY</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">rrule.RRule.</span>MONTHLY</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">rrule.RRule.</span>SECONDLY</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">rrule.RRule.</span>WEEKLY</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">rrule.RRule.</span>YEARLY</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">rrule.RRule.</span>DEFAULT_OPTIONS</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">rrule.RRule.</span>FR</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">rrule.RRule.</span>FREQUENCIES</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">rrule.RRule.</span>MO</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">rrule.RRule.</span>SA</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">rrule.RRule.</span>SU</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">rrule.RRule.</span>TH</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">rrule.RRule.</span>TU</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">rrule.RRule.</span>WE</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rrule.RRule.prototype">module rrule.RRule.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rrule.RRule.prototype._cacheAdd">
+            function <span class="apidocSignatureSpan">rrule.RRule.prototype.</span>_cacheAdd
+            <span class="apidocSignatureSpan">(what, value, args)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rrule.RRule.prototype._cacheGet">
+            function <span class="apidocSignatureSpan">rrule.RRule.prototype.</span>_cacheGet
+            <span class="apidocSignatureSpan">(what, args)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rrule.RRule.prototype._iter">
+            function <span class="apidocSignatureSpan">rrule.RRule.prototype.</span>_iter
+            <span class="apidocSignatureSpan">(iterResult)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rrule.RRule.prototype.after">
+            function <span class="apidocSignatureSpan">rrule.RRule.prototype.</span>after
+            <span class="apidocSignatureSpan">(dt, inc)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rrule.RRule.prototype.all">
+            function <span class="apidocSignatureSpan">rrule.RRule.prototype.</span>all
+            <span class="apidocSignatureSpan">(iterator)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rrule.RRule.prototype.before">
+            function <span class="apidocSignatureSpan">rrule.RRule.prototype.</span>before
+            <span class="apidocSignatureSpan">(dt, inc)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rrule.RRule.prototype.between">
+            function <span class="apidocSignatureSpan">rrule.RRule.prototype.</span>between
+            <span class="apidocSignatureSpan">(after, before, inc, iterator)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rrule.RRule.prototype.clone">
+            function <span class="apidocSignatureSpan">rrule.RRule.prototype.</span>clone
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rrule.RRule.prototype.constructor">
+            function <span class="apidocSignatureSpan">rrule.RRule.prototype.</span>constructor
+            <span class="apidocSignatureSpan">(options, noCache)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rrule.RRule.prototype.count">
+            function <span class="apidocSignatureSpan">rrule.RRule.prototype.</span>count
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rrule.RRule.prototype.isFullyConvertibleToText">
+            function <span class="apidocSignatureSpan">rrule.RRule.prototype.</span>isFullyConvertibleToText
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rrule.RRule.prototype.toString">
+            function <span class="apidocSignatureSpan">rrule.RRule.prototype.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rrule.RRule.prototype.toText">
+            function <span class="apidocSignatureSpan">rrule.RRule.prototype.</span>toText
+            <span class="apidocSignatureSpan">(gettext, language)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rrule.RRuleSet">module rrule.RRuleSet</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rrule.RRuleSet.RRuleSet">
+            function <span class="apidocSignatureSpan">rrule.</span>RRuleSet
+            <span class="apidocSignatureSpan">(noCache)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.rrule.RRuleSet.prototype">module rrule.RRuleSet.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rrule.RRuleSet.prototype._cacheAdd">
+            function <span class="apidocSignatureSpan">rrule.RRuleSet.prototype.</span>_cacheAdd
+            <span class="apidocSignatureSpan">(what, value, args)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rrule.RRuleSet.prototype._cacheGet">
+            function <span class="apidocSignatureSpan">rrule.RRuleSet.prototype.</span>_cacheGet
+            <span class="apidocSignatureSpan">(what, args)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rrule.RRuleSet.prototype._iter">
+            function <span class="apidocSignatureSpan">rrule.RRuleSet.prototype.</span>_iter
+            <span class="apidocSignatureSpan">(iterResult)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rrule.RRuleSet.prototype.after">
+            function <span class="apidocSignatureSpan">rrule.RRuleSet.prototype.</span>after
+            <span class="apidocSignatureSpan">(dt, inc)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rrule.RRuleSet.prototype.all">
+            function <span class="apidocSignatureSpan">rrule.RRuleSet.prototype.</span>all
+            <span class="apidocSignatureSpan">(iterator)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rrule.RRuleSet.prototype.before">
+            function <span class="apidocSignatureSpan">rrule.RRuleSet.prototype.</span>before
+            <span class="apidocSignatureSpan">(dt, inc)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rrule.RRuleSet.prototype.between">
+            function <span class="apidocSignatureSpan">rrule.RRuleSet.prototype.</span>between
+            <span class="apidocSignatureSpan">(after, before, inc, iterator)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rrule.RRuleSet.prototype.clone">
+            function <span class="apidocSignatureSpan">rrule.RRuleSet.prototype.</span>clone
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rrule.RRuleSet.prototype.constructor">
+            function <span class="apidocSignatureSpan">rrule.RRuleSet.prototype.</span>constructor
+            <span class="apidocSignatureSpan">(noCache)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rrule.RRuleSet.prototype.count">
+            function <span class="apidocSignatureSpan">rrule.RRuleSet.prototype.</span>count
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rrule.RRuleSet.prototype.exdate">
+            function <span class="apidocSignatureSpan">rrule.RRuleSet.prototype.</span>exdate
+            <span class="apidocSignatureSpan">(date)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rrule.RRuleSet.prototype.exrule">
+            function <span class="apidocSignatureSpan">rrule.RRuleSet.prototype.</span>exrule
+            <span class="apidocSignatureSpan">(rrule)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rrule.RRuleSet.prototype.rdate">
+            function <span class="apidocSignatureSpan">rrule.RRuleSet.prototype.</span>rdate
+            <span class="apidocSignatureSpan">(date)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rrule.RRuleSet.prototype.rrule">
+            function <span class="apidocSignatureSpan">rrule.RRuleSet.prototype.</span>rrule
+            <span class="apidocSignatureSpan">(rrule)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rrule.RRuleSet.prototype.toString">
+            function <span class="apidocSignatureSpan">rrule.RRuleSet.prototype.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.rrule.RRuleSet.prototype.valueOf">
+            function <span class="apidocSignatureSpan">rrule.RRuleSet.prototype.</span>valueOf
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rrule" id="apidoc.module.rrule">module rrule</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rrule.rrule" id="apidoc.element.rrule.rrule">
+        function <span class="apidocSignatureSpan"></span>rrule
+        <span class="apidocSignatureSpan">(options, noCache)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">rrule = function (options, noCache) {
+  options = options || {}
+  // RFC string
+  this._string = null
+  this._cache = noCache ? null : {
+    all: false,
+    before: [],
+    after: [],
+    between: []
+  }
+
+  // used by toString()
+  this.origOptions = {}
+
+  var invalid = []
+  var keys = Object.keys(options)
+  var defaultKeys = Object.keys(RRule.DEFAULT_OPTIONS)
+
+  // Shallow copy for origOptions and check for invalid
+  keys.forEach(function (key) {
+    this.origOptions[key] = options[key]
+    if (!contains(defaultKeys, key)) invalid.push(key)
+  }, this)
+
+  if (invalid.length) throw new Error(&#x27;Invalid options: &#x27; + invalid.join(&#x27;, &#x27;))
+
+  if (!RRule.FREQUENCIES[options.freq] &#x26;&#x26; options.byeaster === null) {
+    throw new Error(&#x27;Invalid frequency: &#x27; + String(options.freq))
+  }
+
+  // Merge in default options
+  defaultKeys.forEach(function (key) {
+    if (!contains(keys, key)) options[key] = RRule.DEFAULT_OPTIONS[key]
+  })
+
+  var opts = this.options = options
+
+  if (opts.byeaster !== null) opts.freq = RRule.YEARLY
+  if (!opts.dtstart) opts.dtstart = new Date()
+
+  var millisecondModulo = opts.dtstart.getTime() % 1000
+  if (opts.wkst === null) {
+    opts.wkst = RRule.MO.weekday
+  } else if (typeof opts.wkst === &#x27;number&#x27;) {
+    // cool, just keep it like that
+  } else {
+    opts.wkst = opts.wkst.weekday
+  }
+
+  if (opts.bysetpos !== null) {
+    if (typeof opts.bysetpos === &#x27;number&#x27;) opts.bysetpos = [opts.bysetpos]
+
+    for (var i = 0; i &#x3c; opts.bysetpos.length; i++) {
+      var v = opts.bysetpos[i]
+      if (v === 0 || !(v &#x3e;= -366 &#x26;&#x26; v &#x3c;= 366)) {
+        throw new Error(&#x27;bysetpos must be between 1 and 366,&#x27; +
+          &#x27; or between -366 and -1&#x27;)
+      }
+    }
+  }
+
+  if (!(plb(opts.byweekno) || plb(opts.byyearday) || plb(opts.bymonthday) ||
+    opts.byweekday !== null || opts.byeaster !== null)) {
+    switch (opts.freq) {
+      case RRule.YEARLY:
+        if (!opts.bymonth) opts.bymonth = opts.dtstart.getMonth() + 1
+        opts.bymonthday = opts.dtstart.getDate()
+        break
+      case RRule.MONTHLY:
+        opts.bymonthday = opts.dtstart.getDate()
+        break
+      case RRule.WEEKLY:
+        opts.byweekday = dateutil.getWeekday(opts.dtstart)
+        break
+    }
+  }
+
+  // bymonth
+  if (opts.bymonth !== null &#x26;&#x26; !(opts.bymonth instanceof Array)) {
+    opts.bymonth = [opts.bymonth]
+  }
+  // byyearday
+  if (opts.byyearday !== null &#x26;&#x26; !(opts.byyearday instanceof Array)) {
+    opts.byyearday = [opts.byyearday]
+  }
+
+  // bymonthday
+  if (opts.bymonthday === null) {
+    opts.bymonthday = []
+    opts.bynmonthday = []
+  } else if (opts.bymonthday instanceof Array) {
+    var bymonthday = []
+    var bynmonthday = []
+
+    for (i = 0; i &#x3c; opts.bymonthday.length; i++) {
+      v = opts.bymonthday[i]
+      if (v &#x3e; 0) {
+        bymonthday.push(v)
+      } else if (v &#x3c; 0) {
+        bynmonthday.push(v)
+      }
+    }
+    opts.bymonthday = bymonthday
+    opts.bynmonthday = bynmonthday
+  } else {
+    if (opts.bymonthday &#x3c; 0) {
+      opts.bynmonthday = [opts.bymonthday]
+      opts.bymonthday = []
+    } else {
+      opts.bynmonthday = []
+      opts.bymonthday = [opts.bymonthday]
+    }
+  }
+
+  // byweekno
+  if (opts.byweekno !== null &#x26;&#x26; !(opts.byweekno instanceof Array)) {
+    opts.byweekno = [opts.byweekno]
+  }
+
+  // byweekday / bynweekday
+  if (opts.byweekday === null) {
+    opts.bynweekday = null
+  } else if (typeof opts.byweekday === &#x27;number&#x27;) {
+    opts.byweekday = [opts.byweekday]
+    opts.bynweekday = null
+  } else if (opts.byweekday instanceof Weekday) {
+    if (!opts.byweekday.n || opts.freq &#x3e; RRule.MONTHLY) {
+      opts.byweekday = [opts.byweekday.weekday]
+      opts.bynweekday = null
+    } else {
+      opts.bynweekday = [
+        [opts.byweekday.weekday, opts.byweekday.n]
+      ]
+      opts.byweekday = null
+    }
+  } else {
+    var byweekday = []
+    var bynweekday = []
+
+    for (i = 0; i &#x3c; opts.byweekday.length; i++) {
+      var wday = opts.byweekday[i]
+
+      if (typeof wday === &#x27;number&#x27;) {
+        byweekday.push(wday)
+      } else if (!wday.n || opts.freq &#x3e; RRule.MONTHLY) {
+        byweekday.push(wday.weekday)
+      } else {
+        bynweekday.push([wda ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+**RRuleSet:**
+```js
+var rruleSet = new RRuleSet()
+
+// Add a rrule to rruleSet
+rruleSet.<span class="apidocCodeKeywordSpan">rrule</span>(new RRule({
+  freq: RRule.MONTHLY,
+  count: 5,
+  dtstart: new Date(2012, 1, 1, 10, 30)
+}))
+
+// Add a date to rruleSet
+rruleSet.rdate(new Date(2012, 6, 1, 10, 30))
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rrule.RRule" id="apidoc.element.rrule.RRule">
+        function <span class="apidocSignatureSpan">rrule.</span>RRule
+        <span class="apidocSignatureSpan">(options, noCache)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">RRule = function (options, noCache) {
+  options = options || {}
+  // RFC string
+  this._string = null
+  this._cache = noCache ? null : {
+    all: false,
+    before: [],
+    after: [],
+    between: []
+  }
+
+  // used by toString()
+  this.origOptions = {}
+
+  var invalid = []
+  var keys = Object.keys(options)
+  var defaultKeys = Object.keys(RRule.DEFAULT_OPTIONS)
+
+  // Shallow copy for origOptions and check for invalid
+  keys.forEach(function (key) {
+    this.origOptions[key] = options[key]
+    if (!contains(defaultKeys, key)) invalid.push(key)
+  }, this)
+
+  if (invalid.length) throw new Error(&#x27;Invalid options: &#x27; + invalid.join(&#x27;, &#x27;))
+
+  if (!RRule.FREQUENCIES[options.freq] &#x26;&#x26; options.byeaster === null) {
+    throw new Error(&#x27;Invalid frequency: &#x27; + String(options.freq))
+  }
+
+  // Merge in default options
+  defaultKeys.forEach(function (key) {
+    if (!contains(keys, key)) options[key] = RRule.DEFAULT_OPTIONS[key]
+  })
+
+  var opts = this.options = options
+
+  if (opts.byeaster !== null) opts.freq = RRule.YEARLY
+  if (!opts.dtstart) opts.dtstart = new Date()
+
+  var millisecondModulo = opts.dtstart.getTime() % 1000
+  if (opts.wkst === null) {
+    opts.wkst = RRule.MO.weekday
+  } else if (typeof opts.wkst === &#x27;number&#x27;) {
+    // cool, just keep it like that
+  } else {
+    opts.wkst = opts.wkst.weekday
+  }
+
+  if (opts.bysetpos !== null) {
+    if (typeof opts.bysetpos === &#x27;number&#x27;) opts.bysetpos = [opts.bysetpos]
+
+    for (var i = 0; i &#x3c; opts.bysetpos.length; i++) {
+      var v = opts.bysetpos[i]
+      if (v === 0 || !(v &#x3e;= -366 &#x26;&#x26; v &#x3c;= 366)) {
+        throw new Error(&#x27;bysetpos must be between 1 and 366,&#x27; +
+          &#x27; or between -366 and -1&#x27;)
+      }
+    }
+  }
+
+  if (!(plb(opts.byweekno) || plb(opts.byyearday) || plb(opts.bymonthday) ||
+    opts.byweekday !== null || opts.byeaster !== null)) {
+    switch (opts.freq) {
+      case RRule.YEARLY:
+        if (!opts.bymonth) opts.bymonth = opts.dtstart.getMonth() + 1
+        opts.bymonthday = opts.dtstart.getDate()
+        break
+      case RRule.MONTHLY:
+        opts.bymonthday = opts.dtstart.getDate()
+        break
+      case RRule.WEEKLY:
+        opts.byweekday = dateutil.getWeekday(opts.dtstart)
+        break
+    }
+  }
+
+  // bymonth
+  if (opts.bymonth !== null &#x26;&#x26; !(opts.bymonth instanceof Array)) {
+    opts.bymonth = [opts.bymonth]
+  }
+  // byyearday
+  if (opts.byyearday !== null &#x26;&#x26; !(opts.byyearday instanceof Array)) {
+    opts.byyearday = [opts.byyearday]
+  }
+
+  // bymonthday
+  if (opts.bymonthday === null) {
+    opts.bymonthday = []
+    opts.bynmonthday = []
+  } else if (opts.bymonthday instanceof Array) {
+    var bymonthday = []
+    var bynmonthday = []
+
+    for (i = 0; i &#x3c; opts.bymonthday.length; i++) {
+      v = opts.bymonthday[i]
+      if (v &#x3e; 0) {
+        bymonthday.push(v)
+      } else if (v &#x3c; 0) {
+        bynmonthday.push(v)
+      }
+    }
+    opts.bymonthday = bymonthday
+    opts.bynmonthday = bynmonthday
+  } else {
+    if (opts.bymonthday &#x3c; 0) {
+      opts.bynmonthday = [opts.bymonthday]
+      opts.bymonthday = []
+    } else {
+      opts.bynmonthday = []
+      opts.bymonthday = [opts.bymonthday]
+    }
+  }
+
+  // byweekno
+  if (opts.byweekno !== null &#x26;&#x26; !(opts.byweekno instanceof Array)) {
+    opts.byweekno = [opts.byweekno]
+  }
+
+  // byweekday / bynweekday
+  if (opts.byweekday === null) {
+    opts.bynweekday = null
+  } else if (typeof opts.byweekday === &#x27;number&#x27;) {
+    opts.byweekday = [opts.byweekday]
+    opts.bynweekday = null
+  } else if (opts.byweekday instanceof Weekday) {
+    if (!opts.byweekday.n || opts.freq &#x3e; RRule.MONTHLY) {
+      opts.byweekday = [opts.byweekday.weekday]
+      opts.bynweekday = null
+    } else {
+      opts.bynweekday = [
+        [opts.byweekday.weekday, opts.byweekday.n]
+      ]
+      opts.byweekday = null
+    }
+  } else {
+    var byweekday = []
+    var bynweekday = []
+
+    for (i = 0; i &#x3c; opts.byweekday.length; i++) {
+      var wday = opts.byweekday[i]
+
+      if (typeof wday === &#x27;number&#x27;) {
+        byweekday.push(wday)
+      } else if (!wday.n || opts.freq &#x3e; RRule.MONTHLY) {
+        byweekday.push(wday.weekday)
+      } else {
+        bynweekday.push([wda ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// Add a date to rruleSet
+rruleSet.rdate(new Date(2012, 6, 1, 10, 30))
+
+// Add another date to rruleSet
+rruleSet.rdate(new Date(2012, 6, 2, 10, 30))
+
+// Add a exclusion rrule to rruleSet
+rruleSet.exrule(new r.<span class="apidocCodeKeywordSpan">RRule</span>({
+  freq: RRule.MONTHLY,
+  count: 2,
+  dtstart: new Date(2012, 2, 1, 10, 30)
+}))
+
+// Add a exclusion date to rruleSet
+rruleSet.exdate(new Date(2012, 5, 1, 10, 30))
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rrule.RRuleSet" id="apidoc.element.rrule.RRuleSet">
+        function <span class="apidocSignatureSpan">rrule.</span>RRuleSet
+        <span class="apidocSignatureSpan">(noCache)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">RRuleSet = function (noCache) {
+  // Let RRuleSet cacheable
+  this._cache = noCache ? null : {
+    all: false,
+    before: [],
+    after: [],
+    between: []
+  }
+  this._rrule = []
+  this._rdate = []
+  this._exrule = []
+  this._exdate = []
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rrule.fromString" id="apidoc.element.rrule.fromString">
+        function <span class="apidocSignatureSpan">rrule.</span>fromString
+        <span class="apidocSignatureSpan">(string)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fromString = function (string) {
+  return new RRule(RRule.parseString(string))
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+// Get a slice:
+rule.between(new Date(2012, 7, 1), new Date(2012, 8, 1))
+[&#x27;Mon Aug 27 2012 10:30:00 GMT+0200 (CEST)&#x27;,
+ &#x27;Fri Aug 31 2012 10:30:00 GMT+0200 (CEST)&#x27;]
+
+// Get an iCalendar RRULE string representation:
+// The output can be used with RRule.<span class="apidocCodeKeywordSpan">fromString</span>().
+rule.toString()
+&#x22;FREQ=WEEKLY;DTSTART=20120201T093000Z;INTERVAL=5;UNTIL=20130130T230000Z;BYDAY=MO,FR&#x22;
+
+// Get a human-friendly text representation:
+// The output can be used with RRule.fromText().
+rule.toText()
+&#x22;every 5 weeks on Monday, Friday until January 31, 2013&#x22;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rrule.fromText" id="apidoc.element.rrule.fromText">
+        function <span class="apidocSignatureSpan">rrule.</span>fromText
+        <span class="apidocSignatureSpan">(text, language)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fromText = function (text, language) {
+  return getnlp().fromText(text, language)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```bash
+$ bower install rrule
+```
+
+Alternatively, download
+[rrule.js](https://raw.github.com/jakubroztocil/rrule/master/lib/rrule.js) manually. If
+you intend to use `RRule.prototype.toText()` or `RRule.<span class="apidocCodeKeywordSpan">fromText</span>()`, you&#x27;ll
+also need [nlp.js](https://raw.github.com/jakubroztocil/rrule/master/lib/nlp.js).
+
+```html
+&#x3c;script src=&#x22;rrule/lib/rrule.js&#x22;&#x3e;&#x3c;/script&#x3e;
+
+&#x3c;!-- Optional --&#x3e;
+&#x3c;script src=&#x22;rrule/lib/nlp.js&#x22;&#x3e;&#x3c;/script&#x3e;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rrule.optionsToString" id="apidoc.element.rrule.optionsToString">
+        function <span class="apidocSignatureSpan">rrule.</span>optionsToString
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">optionsToString = function (options) {
+  var key, value, strValues
+  var pairs = []
+  var keys = Object.keys(options)
+  var defaultKeys = Object.keys(RRule.DEFAULT_OPTIONS)
+
+  for (var i = 0; i &#x3c; keys.length; i++) {
+    if (!contains(defaultKeys, keys[i])) continue
+
+    key = keys[i].toUpperCase()
+    value = options[keys[i]]
+    strValues = []
+
+    if (value === null || value instanceof Array &#x26;&#x26; !value.length) continue
+
+    switch (key) {
+      case &#x27;FREQ&#x27;:
+        value = RRule.FREQUENCIES[options.freq]
+        break
+      case &#x27;WKST&#x27;:
+        value = value.toString()
+        break
+      case &#x27;BYWEEKDAY&#x27;:
+<span class="apidocCodeCommentSpan">        /*
+        NOTE: BYWEEKDAY is a special case.
+        RRule() deconstructs the rule.options.byweekday array
+        into an array of Weekday arguments.
+        On the other hand, rule.origOptions is an array of Weekdays.
+        We need to handle both cases here.
+        It might be worth change RRule to keep the Weekdays.
+
+        Also, BYWEEKDAY (used by RRule) vs. BYDAY (RFC)
+
+        */
+</span>        key = &#x27;BYDAY&#x27;
+        if (!(value instanceof Array)) value = [value]
+
+        for (var wday, j = 0; j &#x3c; value.length; j++) {
+          wday = value[j]
+          if (wday instanceof Weekday) {
+            // good
+          } else if (wday instanceof Array) {
+            wday = new Weekday(wday[0], wday[1])
+          } else {
+            wday = new Weekday(wday)
+          }
+          strValues[j] = wday.toString()
+        }
+        value = strValues
+        break
+      case &#x27;DTSTART&#x27;:
+      case &#x27;UNTIL&#x27;:
+        value = dateutil.timeToUntilString(value)
+        break
+      default:
+        if (value instanceof Array) {
+          for (j = 0; j &#x3c; value.length; j++) strValues[j] = String(value[j])
+          value = strValues
+        } else {
+          value = String(value)
+        }
+
+    }
+    pairs.push([key, value])
+  }
+
+  var strings = []
+  for (i = 0; i &#x3c; pairs.length; i++) {
+    var attr = pairs[i]
+    strings.push(attr[0] + &#x27;=&#x27; + attr[1].toString())
+  }
+  return strings.join(&#x27;;&#x27;)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Returns a string representation of the rule as per the iCalendar RFC.
+Only properties explicitly specified in `options` are included:
+
+```javascript
+rule.toString()
+&#x22;FREQ=WEEKLY;DTSTART=20120201T093000Z;INTERVAL=5;UNTIL=20130130T230000Z;BYDAY=MO,FR&#x22;
+
+rule.toString() == RRule.<span class="apidocCodeKeywordSpan">optionsToString</span>(rule.origOptions)
+true
+```
+
+##### `RRule.optionsToString(options)`
+
+Converts `options` to iCalendar RFC `RRULE` string:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rrule.parseString" id="apidoc.element.rrule.parseString">
+        function <span class="apidocSignatureSpan">rrule.</span>parseString
+        <span class="apidocSignatureSpan">(rfcString)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parseString = function (rfcString) {
+  rfcString = rfcString.replace(/^\s+|\s+$/, &#x27;&#x27;)
+  if (!rfcString.length) return null
+
+  var i, j, key, value, attr
+  var attrs = rfcString.split(&#x27;;&#x27;)
+  var options = {}
+
+  for (i = 0; i &#x3c; attrs.length; i++) {
+    attr = attrs[i].split(&#x27;=&#x27;)
+    key = attr[0]
+    value = attr[1]
+    switch (key) {
+      case &#x27;FREQ&#x27;:
+        options.freq = RRule[value]
+        break
+      case &#x27;WKST&#x27;:
+        options.wkst = RRule[value]
+        break
+      case &#x27;COUNT&#x27;:
+      case &#x27;INTERVAL&#x27;:
+      case &#x27;BYSETPOS&#x27;:
+      case &#x27;BYMONTH&#x27;:
+      case &#x27;BYMONTHDAY&#x27;:
+      case &#x27;BYYEARDAY&#x27;:
+      case &#x27;BYWEEKNO&#x27;:
+      case &#x27;BYHOUR&#x27;:
+      case &#x27;BYMINUTE&#x27;:
+      case &#x27;BYSECOND&#x27;:
+        if (value.indexOf(&#x27;,&#x27;) !== -1) {
+          value = value.split(&#x27;,&#x27;)
+          for (j = 0; j &#x3c; value.length; j++) {
+            if (/^[+-]?\d+$/.test(value[j])) value[j] = Number(value[j])
+          }
+        } else if (/^[+-]?\d+$/.test(value)) {
+          value = Number(value)
+        }
+        key = key.toLowerCase()
+        options[key] = value
+        break
+      case &#x27;BYDAY&#x27;: // =&#x3e; byweekday
+        var n, wday, day
+        var days = value.split(&#x27;,&#x27;)
+
+        options.byweekday = []
+        for (j = 0; j &#x3c; days.length; j++) {
+          day = days[j]
+          if (day.length === 2) { // MO, TU, ...
+            wday = RRule[day] // wday instanceof Weekday
+            options.byweekday.push(wday)
+          } else { // -1MO, +3FR, 1SO, ...
+            day = day.match(/^([+-]?\d)([A-Z]{2})$/)
+            n = Number(day[1])
+            wday = day[2]
+            wday = RRule[wday].weekday
+            options.byweekday.push(new Weekday(wday, n))
+          }
+        }
+        break
+      case &#x27;DTSTART&#x27;:
+        options.dtstart = dateutil.untilStringToDate(value)
+        break
+      case &#x27;UNTIL&#x27;:
+        options.until = dateutil.untilStringToDate(value)
+        break
+      case &#x27;BYEASTER&#x27;:
+        options.byeaster = Number(value)
+        break
+      default:
+        throw new Error(&#x22;Unknown RRULE property &#x27;&#x22; + key + &#x22;&#x27;&#x22;)
+    }
+  }
+  return options
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Constructs an `RRule` instance from a complete `rfcString`:
+
+```javascript
+var rule = RRule.fromString(&#x22;FREQ=WEEKLY;DTSTART=20120201T093000Z&#x22;)
+
+// This is equivalent
+var rule = new RRule(RRule.<span class="apidocCodeKeywordSpan">parseString</span>(&#x22;FREQ=WEEKLY;DTSTART=20120201T093000Z&#x22
+;))
+```
+
+##### `RRule.parseString(rfcString)`
+
+Only parse RFC string and return `options`.
+
+```javascript
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rrule.parseText" id="apidoc.element.rrule.parseText">
+        function <span class="apidocSignatureSpan">rrule.</span>parseText
+        <span class="apidocSignatureSpan">(text, language)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parseText = function (text, language) {
+  return getnlp().parseText(text, language)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Constructs an `RRule` instance from `text`.
+
+```javascript
+rule = RRule.fromText(&#x27;every day for 3 times&#x27;)
+```
+
+##### `RRule.<span class="apidocCodeKeywordSpan">parseText</span>(text[, language])`
+
+Parse `text` into `options`:
+
+```javascript
+options = RRule.parseText(&#x27;every day for 3 times&#x27;)
+// {freq: 3, count: &#x22;3&#x22;}
+options.dtstart = new Date(2000, 1, 1)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rrule.rrulestr" id="apidoc.element.rrule.rrulestr">
+        function <span class="apidocSignatureSpan">rrule.</span>rrulestr
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">rrulestr = function () {
+  return rruleStr.parse.apply(rruleStr, arguments)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rrule.RRule" id="apidoc.module.rrule.RRule">module rrule.RRule</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rrule.RRule.RRule" id="apidoc.element.rrule.RRule.RRule">
+        function <span class="apidocSignatureSpan">rrule.</span>RRule
+        <span class="apidocSignatureSpan">(options, noCache)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">RRule = function (options, noCache) {
+  options = options || {}
+  // RFC string
+  this._string = null
+  this._cache = noCache ? null : {
+    all: false,
+    before: [],
+    after: [],
+    between: []
+  }
+
+  // used by toString()
+  this.origOptions = {}
+
+  var invalid = []
+  var keys = Object.keys(options)
+  var defaultKeys = Object.keys(RRule.DEFAULT_OPTIONS)
+
+  // Shallow copy for origOptions and check for invalid
+  keys.forEach(function (key) {
+    this.origOptions[key] = options[key]
+    if (!contains(defaultKeys, key)) invalid.push(key)
+  }, this)
+
+  if (invalid.length) throw new Error(&#x27;Invalid options: &#x27; + invalid.join(&#x27;, &#x27;))
+
+  if (!RRule.FREQUENCIES[options.freq] &#x26;&#x26; options.byeaster === null) {
+    throw new Error(&#x27;Invalid frequency: &#x27; + String(options.freq))
+  }
+
+  // Merge in default options
+  defaultKeys.forEach(function (key) {
+    if (!contains(keys, key)) options[key] = RRule.DEFAULT_OPTIONS[key]
+  })
+
+  var opts = this.options = options
+
+  if (opts.byeaster !== null) opts.freq = RRule.YEARLY
+  if (!opts.dtstart) opts.dtstart = new Date()
+
+  var millisecondModulo = opts.dtstart.getTime() % 1000
+  if (opts.wkst === null) {
+    opts.wkst = RRule.MO.weekday
+  } else if (typeof opts.wkst === &#x27;number&#x27;) {
+    // cool, just keep it like that
+  } else {
+    opts.wkst = opts.wkst.weekday
+  }
+
+  if (opts.bysetpos !== null) {
+    if (typeof opts.bysetpos === &#x27;number&#x27;) opts.bysetpos = [opts.bysetpos]
+
+    for (var i = 0; i &#x3c; opts.bysetpos.length; i++) {
+      var v = opts.bysetpos[i]
+      if (v === 0 || !(v &#x3e;= -366 &#x26;&#x26; v &#x3c;= 366)) {
+        throw new Error(&#x27;bysetpos must be between 1 and 366,&#x27; +
+          &#x27; or between -366 and -1&#x27;)
+      }
+    }
+  }
+
+  if (!(plb(opts.byweekno) || plb(opts.byyearday) || plb(opts.bymonthday) ||
+    opts.byweekday !== null || opts.byeaster !== null)) {
+    switch (opts.freq) {
+      case RRule.YEARLY:
+        if (!opts.bymonth) opts.bymonth = opts.dtstart.getMonth() + 1
+        opts.bymonthday = opts.dtstart.getDate()
+        break
+      case RRule.MONTHLY:
+        opts.bymonthday = opts.dtstart.getDate()
+        break
+      case RRule.WEEKLY:
+        opts.byweekday = dateutil.getWeekday(opts.dtstart)
+        break
+    }
+  }
+
+  // bymonth
+  if (opts.bymonth !== null &#x26;&#x26; !(opts.bymonth instanceof Array)) {
+    opts.bymonth = [opts.bymonth]
+  }
+  // byyearday
+  if (opts.byyearday !== null &#x26;&#x26; !(opts.byyearday instanceof Array)) {
+    opts.byyearday = [opts.byyearday]
+  }
+
+  // bymonthday
+  if (opts.bymonthday === null) {
+    opts.bymonthday = []
+    opts.bynmonthday = []
+  } else if (opts.bymonthday instanceof Array) {
+    var bymonthday = []
+    var bynmonthday = []
+
+    for (i = 0; i &#x3c; opts.bymonthday.length; i++) {
+      v = opts.bymonthday[i]
+      if (v &#x3e; 0) {
+        bymonthday.push(v)
+      } else if (v &#x3c; 0) {
+        bynmonthday.push(v)
+      }
+    }
+    opts.bymonthday = bymonthday
+    opts.bynmonthday = bynmonthday
+  } else {
+    if (opts.bymonthday &#x3c; 0) {
+      opts.bynmonthday = [opts.bymonthday]
+      opts.bymonthday = []
+    } else {
+      opts.bynmonthday = []
+      opts.bymonthday = [opts.bymonthday]
+    }
+  }
+
+  // byweekno
+  if (opts.byweekno !== null &#x26;&#x26; !(opts.byweekno instanceof Array)) {
+    opts.byweekno = [opts.byweekno]
+  }
+
+  // byweekday / bynweekday
+  if (opts.byweekday === null) {
+    opts.bynweekday = null
+  } else if (typeof opts.byweekday === &#x27;number&#x27;) {
+    opts.byweekday = [opts.byweekday]
+    opts.bynweekday = null
+  } else if (opts.byweekday instanceof Weekday) {
+    if (!opts.byweekday.n || opts.freq &#x3e; RRule.MONTHLY) {
+      opts.byweekday = [opts.byweekday.weekday]
+      opts.bynweekday = null
+    } else {
+      opts.bynweekday = [
+        [opts.byweekday.weekday, opts.byweekday.n]
+      ]
+      opts.byweekday = null
+    }
+  } else {
+    var byweekday = []
+    var bynweekday = []
+
+    for (i = 0; i &#x3c; opts.byweekday.length; i++) {
+      var wday = opts.byweekday[i]
+
+      if (typeof wday === &#x27;number&#x27;) {
+        byweekday.push(wday)
+      } else if (!wday.n || opts.freq &#x3e; RRule.MONTHLY) {
+        byweekday.push(wday.weekday)
+      } else {
+        bynweekday.push([wda ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// Add a date to rruleSet
+rruleSet.rdate(new Date(2012, 6, 1, 10, 30))
+
+// Add another date to rruleSet
+rruleSet.rdate(new Date(2012, 6, 2, 10, 30))
+
+// Add a exclusion rrule to rruleSet
+rruleSet.exrule(new r.<span class="apidocCodeKeywordSpan">RRule</span>({
+  freq: RRule.MONTHLY,
+  count: 2,
+  dtstart: new Date(2012, 2, 1, 10, 30)
+}))
+
+// Add a exclusion date to rruleSet
+rruleSet.exdate(new Date(2012, 5, 1, 10, 30))
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rrule.RRule.RRuleSet" id="apidoc.element.rrule.RRule.RRuleSet">
+        function <span class="apidocSignatureSpan">rrule.RRule.</span>RRuleSet
+        <span class="apidocSignatureSpan">(noCache)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">RRuleSet = function (noCache) {
+  // Let RRuleSet cacheable
+  this._cache = noCache ? null : {
+    all: false,
+    before: [],
+    after: [],
+    between: []
+  }
+  this._rrule = []
+  this._rdate = []
+  this._exrule = []
+  this._exdate = []
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rrule.RRule.fromString" id="apidoc.element.rrule.RRule.fromString">
+        function <span class="apidocSignatureSpan">rrule.RRule.</span>fromString
+        <span class="apidocSignatureSpan">(string)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fromString = function (string) {
+  return new RRule(RRule.parseString(string))
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+// Get a slice:
+rule.between(new Date(2012, 7, 1), new Date(2012, 8, 1))
+[&#x27;Mon Aug 27 2012 10:30:00 GMT+0200 (CEST)&#x27;,
+ &#x27;Fri Aug 31 2012 10:30:00 GMT+0200 (CEST)&#x27;]
+
+// Get an iCalendar RRULE string representation:
+// The output can be used with RRule.<span class="apidocCodeKeywordSpan">fromString</span>().
+rule.toString()
+&#x22;FREQ=WEEKLY;DTSTART=20120201T093000Z;INTERVAL=5;UNTIL=20130130T230000Z;BYDAY=MO,FR&#x22;
+
+// Get a human-friendly text representation:
+// The output can be used with RRule.fromText().
+rule.toText()
+&#x22;every 5 weeks on Monday, Friday until January 31, 2013&#x22;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rrule.RRule.fromText" id="apidoc.element.rrule.RRule.fromText">
+        function <span class="apidocSignatureSpan">rrule.RRule.</span>fromText
+        <span class="apidocSignatureSpan">(text, language)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fromText = function (text, language) {
+  return getnlp().fromText(text, language)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```bash
+$ bower install rrule
+```
+
+Alternatively, download
+[rrule.js](https://raw.github.com/jakubroztocil/rrule/master/lib/rrule.js) manually. If
+you intend to use `RRule.prototype.toText()` or `RRule.<span class="apidocCodeKeywordSpan">fromText</span>()`, you&#x27;ll
+also need [nlp.js](https://raw.github.com/jakubroztocil/rrule/master/lib/nlp.js).
+
+```html
+&#x3c;script src=&#x22;rrule/lib/rrule.js&#x22;&#x3e;&#x3c;/script&#x3e;
+
+&#x3c;!-- Optional --&#x3e;
+&#x3c;script src=&#x22;rrule/lib/nlp.js&#x22;&#x3e;&#x3c;/script&#x3e;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rrule.RRule.optionsToString" id="apidoc.element.rrule.RRule.optionsToString">
+        function <span class="apidocSignatureSpan">rrule.RRule.</span>optionsToString
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">optionsToString = function (options) {
+  var key, value, strValues
+  var pairs = []
+  var keys = Object.keys(options)
+  var defaultKeys = Object.keys(RRule.DEFAULT_OPTIONS)
+
+  for (var i = 0; i &#x3c; keys.length; i++) {
+    if (!contains(defaultKeys, keys[i])) continue
+
+    key = keys[i].toUpperCase()
+    value = options[keys[i]]
+    strValues = []
+
+    if (value === null || value instanceof Array &#x26;&#x26; !value.length) continue
+
+    switch (key) {
+      case &#x27;FREQ&#x27;:
+        value = RRule.FREQUENCIES[options.freq]
+        break
+      case &#x27;WKST&#x27;:
+        value = value.toString()
+        break
+      case &#x27;BYWEEKDAY&#x27;:
+<span class="apidocCodeCommentSpan">        /*
+        NOTE: BYWEEKDAY is a special case.
+        RRule() deconstructs the rule.options.byweekday array
+        into an array of Weekday arguments.
+        On the other hand, rule.origOptions is an array of Weekdays.
+        We need to handle both cases here.
+        It might be worth change RRule to keep the Weekdays.
+
+        Also, BYWEEKDAY (used by RRule) vs. BYDAY (RFC)
+
+        */
+</span>        key = &#x27;BYDAY&#x27;
+        if (!(value instanceof Array)) value = [value]
+
+        for (var wday, j = 0; j &#x3c; value.length; j++) {
+          wday = value[j]
+          if (wday instanceof Weekday) {
+            // good
+          } else if (wday instanceof Array) {
+            wday = new Weekday(wday[0], wday[1])
+          } else {
+            wday = new Weekday(wday)
+          }
+          strValues[j] = wday.toString()
+        }
+        value = strValues
+        break
+      case &#x27;DTSTART&#x27;:
+      case &#x27;UNTIL&#x27;:
+        value = dateutil.timeToUntilString(value)
+        break
+      default:
+        if (value instanceof Array) {
+          for (j = 0; j &#x3c; value.length; j++) strValues[j] = String(value[j])
+          value = strValues
+        } else {
+          value = String(value)
+        }
+
+    }
+    pairs.push([key, value])
+  }
+
+  var strings = []
+  for (i = 0; i &#x3c; pairs.length; i++) {
+    var attr = pairs[i]
+    strings.push(attr[0] + &#x27;=&#x27; + attr[1].toString())
+  }
+  return strings.join(&#x27;;&#x27;)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Returns a string representation of the rule as per the iCalendar RFC.
+Only properties explicitly specified in `options` are included:
+
+```javascript
+rule.toString()
+&#x22;FREQ=WEEKLY;DTSTART=20120201T093000Z;INTERVAL=5;UNTIL=20130130T230000Z;BYDAY=MO,FR&#x22;
+
+rule.toString() == RRule.<span class="apidocCodeKeywordSpan">optionsToString</span>(rule.origOptions)
+true
+```
+
+##### `RRule.optionsToString(options)`
+
+Converts `options` to iCalendar RFC `RRULE` string:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rrule.RRule.parseString" id="apidoc.element.rrule.RRule.parseString">
+        function <span class="apidocSignatureSpan">rrule.RRule.</span>parseString
+        <span class="apidocSignatureSpan">(rfcString)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parseString = function (rfcString) {
+  rfcString = rfcString.replace(/^\s+|\s+$/, &#x27;&#x27;)
+  if (!rfcString.length) return null
+
+  var i, j, key, value, attr
+  var attrs = rfcString.split(&#x27;;&#x27;)
+  var options = {}
+
+  for (i = 0; i &#x3c; attrs.length; i++) {
+    attr = attrs[i].split(&#x27;=&#x27;)
+    key = attr[0]
+    value = attr[1]
+    switch (key) {
+      case &#x27;FREQ&#x27;:
+        options.freq = RRule[value]
+        break
+      case &#x27;WKST&#x27;:
+        options.wkst = RRule[value]
+        break
+      case &#x27;COUNT&#x27;:
+      case &#x27;INTERVAL&#x27;:
+      case &#x27;BYSETPOS&#x27;:
+      case &#x27;BYMONTH&#x27;:
+      case &#x27;BYMONTHDAY&#x27;:
+      case &#x27;BYYEARDAY&#x27;:
+      case &#x27;BYWEEKNO&#x27;:
+      case &#x27;BYHOUR&#x27;:
+      case &#x27;BYMINUTE&#x27;:
+      case &#x27;BYSECOND&#x27;:
+        if (value.indexOf(&#x27;,&#x27;) !== -1) {
+          value = value.split(&#x27;,&#x27;)
+          for (j = 0; j &#x3c; value.length; j++) {
+            if (/^[+-]?\d+$/.test(value[j])) value[j] = Number(value[j])
+          }
+        } else if (/^[+-]?\d+$/.test(value)) {
+          value = Number(value)
+        }
+        key = key.toLowerCase()
+        options[key] = value
+        break
+      case &#x27;BYDAY&#x27;: // =&#x3e; byweekday
+        var n, wday, day
+        var days = value.split(&#x27;,&#x27;)
+
+        options.byweekday = []
+        for (j = 0; j &#x3c; days.length; j++) {
+          day = days[j]
+          if (day.length === 2) { // MO, TU, ...
+            wday = RRule[day] // wday instanceof Weekday
+            options.byweekday.push(wday)
+          } else { // -1MO, +3FR, 1SO, ...
+            day = day.match(/^([+-]?\d)([A-Z]{2})$/)
+            n = Number(day[1])
+            wday = day[2]
+            wday = RRule[wday].weekday
+            options.byweekday.push(new Weekday(wday, n))
+          }
+        }
+        break
+      case &#x27;DTSTART&#x27;:
+        options.dtstart = dateutil.untilStringToDate(value)
+        break
+      case &#x27;UNTIL&#x27;:
+        options.until = dateutil.untilStringToDate(value)
+        break
+      case &#x27;BYEASTER&#x27;:
+        options.byeaster = Number(value)
+        break
+      default:
+        throw new Error(&#x22;Unknown RRULE property &#x27;&#x22; + key + &#x22;&#x27;&#x22;)
+    }
+  }
+  return options
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Constructs an `RRule` instance from a complete `rfcString`:
+
+```javascript
+var rule = RRule.fromString(&#x22;FREQ=WEEKLY;DTSTART=20120201T093000Z&#x22;)
+
+// This is equivalent
+var rule = new RRule(RRule.<span class="apidocCodeKeywordSpan">parseString</span>(&#x22;FREQ=WEEKLY;DTSTART=20120201T093000Z&#x22
+;))
+```
+
+##### `RRule.parseString(rfcString)`
+
+Only parse RFC string and return `options`.
+
+```javascript
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rrule.RRule.parseText" id="apidoc.element.rrule.RRule.parseText">
+        function <span class="apidocSignatureSpan">rrule.RRule.</span>parseText
+        <span class="apidocSignatureSpan">(text, language)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parseText = function (text, language) {
+  return getnlp().parseText(text, language)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Constructs an `RRule` instance from `text`.
+
+```javascript
+rule = RRule.fromText(&#x27;every day for 3 times&#x27;)
+```
+
+##### `RRule.<span class="apidocCodeKeywordSpan">parseText</span>(text[, language])`
+
+Parse `text` into `options`:
+
+```javascript
+options = RRule.parseText(&#x27;every day for 3 times&#x27;)
+// {freq: 3, count: &#x22;3&#x22;}
+options.dtstart = new Date(2000, 1, 1)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rrule.RRule.rrulestr" id="apidoc.element.rrule.RRule.rrulestr">
+        function <span class="apidocSignatureSpan">rrule.RRule.</span>rrulestr
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">rrulestr = function () {
+  return rruleStr.parse.apply(rruleStr, arguments)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rrule.RRule.prototype" id="apidoc.module.rrule.RRule.prototype">module rrule.RRule.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rrule.RRule.prototype._cacheAdd" id="apidoc.element.rrule.RRule.prototype._cacheAdd">
+        function <span class="apidocSignatureSpan">rrule.RRule.prototype.</span>_cacheAdd
+        <span class="apidocSignatureSpan">(what, value, args)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_cacheAdd = function (what, value, args) {
+  if (!this._cache) return
+
+  if (value) {
+    value = (value instanceof Date)
+      ? dateutil.clone(value) : dateutil.cloneDates(value)
+  }
+
+  if (what === &#x27;all&#x27;) {
+    this._cache.all = value
+  } else {
+    args._value = value
+    this._cache[what].push(args)
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rrule.RRule.prototype._cacheGet" id="apidoc.element.rrule.RRule.prototype._cacheGet">
+        function <span class="apidocSignatureSpan">rrule.RRule.prototype.</span>_cacheGet
+        <span class="apidocSignatureSpan">(what, args)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_cacheGet = function (what, args) {
+  if (!this._cache) return false
+
+  var cached = false
+  var argsKeys = args ? Object.keys(args) : []
+  var findCacheDiff = function (item) {
+    for (var key, i = 0; i &#x3c; argsKeys.length; i++) {
+      key = argsKeys[i]
+      if (String(args[key]) !== String(item[key])) return true
+    }
+    return false
+  }
+
+  if (what === &#x27;all&#x27;) {
+    cached = this._cache.all
+  } else {
+    // Let&#x27;s see whether we&#x27;ve already called the
+    // &#x27;what&#x27; method with the same &#x27;args&#x27;
+    for (var item, i = 0; i &#x3c; this._cache[what].length; i++) {
+      item = this._cache[what][i]
+      if (argsKeys.length &#x26;&#x26; findCacheDiff(item)) continue
+      cached = item._value
+      break
+    }
+  }
+
+  if (!cached &#x26;&#x26; this._cache.all) {
+    // Not in the cache, but we already know all the occurrences,
+    // so we can find the correct dates from the cached ones.
+    var iterResult = new IterResult(what, args)
+    for (i = 0; i &#x3c; this._cache.all.length; i++) {
+      if (!iterResult.accept(this._cache.all[i])) break
+    }
+    cached = iterResult.getValue()
+    this._cacheAdd(what, cached, args)
+  }
+
+  return cached instanceof Array
+    ? dateutil.cloneDates(cached)
+    : (cached instanceof Date ? dateutil.clone(cached) : cached)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rrule.RRule.prototype._iter" id="apidoc.element.rrule.RRule.prototype._iter">
+        function <span class="apidocSignatureSpan">rrule.RRule.prototype.</span>_iter
+        <span class="apidocSignatureSpan">(iterResult)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_iter = function (iterResult) {
+<span class="apidocCodeCommentSpan">  /* Since JavaScript doesn&#x27;t have the python&#x27;s yield operator (&#x3c;1.7),
+     we use the IterResult object that tells us when to stop iterating.
+
+  */
+</span>
+  var dtstart = this.options.dtstart
+  var dtstartMillisecondModulo = this.options.dtstart % 1000
+
+  var year = dtstart.getFullYear()
+  var month = dtstart.getMonth() + 1
+  var day = dtstart.getDate()
+  var hour = dtstart.getHours()
+  var minute = dtstart.getMinutes()
+  var second = dtstart.getSeconds()
+  var weekday = dateutil.getWeekday(dtstart)
+
+  // Some local variables to speed things up a bit
+  var freq = this.options.freq
+  var interval = this.options.interval
+  var wkst = this.options.wkst
+  var until = this.options.until
+  var bymonth = this.options.bymonth
+  var byweekno = this.options.byweekno
+  var byyearday = this.options.byyearday
+  var byweekday = this.options.byweekday
+  var byeaster = this.options.byeaster
+  var bymonthday = this.options.bymonthday
+  var bynmonthday = this.options.bynmonthday
+  var bysetpos = this.options.bysetpos
+  var byhour = this.options.byhour
+  var byminute = this.options.byminute
+  var bysecond = this.options.bysecond
+
+  var ii = new Iterinfo(this)
+  ii.rebuild(year, month)
+
+  var getdayset = {}
+  getdayset[RRule.YEARLY] = ii.ydayset
+  getdayset[RRule.MONTHLY] = ii.mdayset
+  getdayset[RRule.WEEKLY] = ii.wdayset
+  getdayset[RRule.DAILY] = ii.ddayset
+  getdayset[RRule.HOURLY] = ii.ddayset
+  getdayset[RRule.MINUTELY] = ii.ddayset
+  getdayset[RRule.SECONDLY] = ii.ddayset
+
+  getdayset = getdayset[freq]
+
+  var timeset
+  if (freq &#x3c; RRule.HOURLY) {
+    timeset = this.timeset
+  } else {
+    var gettimeset = {}
+    gettimeset[RRule.HOURLY] = ii.htimeset
+    gettimeset[RRule.MINUTELY] = ii.mtimeset
+    gettimeset[RRule.SECONDLY] = ii.stimeset
+    gettimeset = gettimeset[freq]
+    if ((freq &#x3e;= RRule.HOURLY &#x26;&#x26; plb(byhour) &#x26;&#x26; !contains(byhour, hour)) ||
+      (freq &#x3e;= RRule.MINUTELY &#x26;&#x26; plb(byminute) &#x26;&#x26; !contains(byminute, minute)) ||
+      (freq &#x3e;= RRule.SECONDLY &#x26;&#x26; plb(bysecond) &#x26;&#x26; !contains(bysecond, minute))) {
+      timeset = []
+    } else {
+      timeset = gettimeset.call(ii, hour, minute, second, dtstartMillisecondModulo)
+    }
+  }
+
+  var total = 0
+  var count = this.options.count
+  var i, j, k, dm, div, mod, tmp, pos, dayset, start, end, fixday, filtered
+
+  while (true) {
+    // Get dayset with the right frequency
+    tmp = getdayset.call(ii, year, month, day)
+    dayset = tmp[0]
+    start = tmp[1]
+    end = tmp[2]
+
+    // Do the &#x22;hard&#x22; work ;-)
+    filtered = false
+    for (j = start; j &#x3c; end; j++) {
+      i = dayset[j]
+
+      filtered = (plb(bymonth) &#x26;&#x26; !contains(bymonth, ii.mmask[i])) ||
+        (plb(byweekno) &#x26;&#x26; !ii.wnomask[i]) ||
+        (plb(byweekday) &#x26;&#x26; !contains(byweekday, ii.wdaymask[i])) ||
+        (plb(ii.nwdaymask) &#x26;&#x26; !ii.nwdaymask[i]) ||
+        (byeaster !== null &#x26;&#x26; !contains(ii.eastermask, i)) ||
+        ((plb(bymonthday) || plb(bynmonthday)) &#x26;&#x26;
+          !contains(bymonthday, ii.mdaymask[i]) &#x26;&#x26;
+          !contains(bynmonthday, ii.nmdaymask[i])) ||
+        (plb(byyearday) &#x26;&#x26;
+          ((i &#x3c; ii.yearlen &#x26;&#x26;
+            !contains(byyearday, i + 1) &#x26;&#x26;
+            !contains(byyearday, -ii.yearlen + i)) ||
+          (i &#x3e;= ii.yearlen &#x26;&#x26;
+            !contains(byyearday, i + 1 - ii.yearlen) &#x26;&#x26;
+            !contains(byyearday, -ii.nextyearlen + i - ii.yearlen))))
+
+      if (filtered) dayset[i] = null
+    }
+
+    // Output results
+    if (plb(bysetpos) &#x26;&#x26; plb(timeset)) {
+      var daypos, timepos
+      var poslist = []
+
+      for (i, j = 0; j &#x3c; bysetpos.length; j++) {
+        pos = bysetpos[j]
+
+        if (pos &#x3c; 0) {
+          daypos = Math.floor(pos / timeset.length)
+          timepos = pymod(pos, timeset.length)
+        } else {
+          daypos = Math.floor((pos - 1) / timeset.length)
+          timepos = pymod((pos - 1), timeset.length)
+        }
+
+        try {
+          tmp = []
+          for (k = start; k &#x3c; end; k++) {
+            var val = dayset[k]
+            if (val === null) continue
+            tmp.push(val)
+          }
+          if (daypos &#x3c; 0) {
+            // we&#x27;re trying to emulate python&#x27;s aList[-n ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rrule.RRule.prototype.after" id="apidoc.element.rrule.RRule.prototype.after">
+        function <span class="apidocSignatureSpan">rrule.RRule.prototype.</span>after
+        <span class="apidocSignatureSpan">(dt, inc)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">after = function (dt, inc) {
+  var args = {dt: dt, inc: inc}
+  var result = this._cacheGet(&#x27;after&#x27;, args)
+  if (result === false) {
+    result = this._iter(new IterResult(&#x27;after&#x27;, args))
+    this._cacheAdd(&#x27;after&#x27;, result, args)
+  }
+  return result
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+##### `RRule.prototype.before(dt, inc=false)`
+
+Returns the last recurrence before the given `Date` instance. The `inc`
+argument defines what happens if `dt` is an occurrence. With
+`inc == true`, if `dt` itself is an occurrence, it will be returned.
+
+
+##### `RRule.prototype.<span class="apidocCodeKeywordSpan">after</span>(dt, inc=false)`
+
+Returns the first recurrence
+after the given `Date` instance. The `inc` argument defines what happens
+if `dt` is an occurrence. With `inc == true`, if `dt` itself is an
+occurrence, it will be returned.
+
+See also [python-dateutil](http://labix.org/python-dateutil/)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rrule.RRule.prototype.all" id="apidoc.element.rrule.RRule.prototype.all">
+        function <span class="apidocSignatureSpan">rrule.RRule.prototype.</span>all
+        <span class="apidocSignatureSpan">(iterator)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">all = function (iterator) {
+  if (iterator) {
+    return this._iter(new CallbackIterResult(&#x27;all&#x27;, {}, iterator))
+  } else {
+    var result = this._cacheGet(&#x27;all&#x27;)
+    if (result === false) {
+      result = this._iter(new IterResult(&#x27;all&#x27;, {}))
+      this._cacheAdd(&#x27;all&#x27;, result)
+    }
+    return result
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  interval: 5,
+  byweekday: [RRule.MO, RRule.FR],
+  dtstart: new Date(2012, 1, 1, 10, 30),
+  until: new Date(2012, 12, 31)
+})
+
+// Get all occurrence dates (Date instances):
+rule.<span class="apidocCodeKeywordSpan">all</span>()
+[&#x27;Fri Feb 03 2012 10:30:00 GMT+0100 (CET)&#x27;,
+ &#x27;Mon Mar 05 2012 10:30:00 GMT+0100 (CET)&#x27;,
+ &#x27;Fri Mar 09 2012 10:30:00 GMT+0100 (CET)&#x27;,
+ &#x27;Mon Apr 09 2012 10:30:00 GMT+0200 (CEST)&#x27;,
+ /* … */]
+
+// Get a slice:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rrule.RRule.prototype.before" id="apidoc.element.rrule.RRule.prototype.before">
+        function <span class="apidocSignatureSpan">rrule.RRule.prototype.</span>before
+        <span class="apidocSignatureSpan">(dt, inc)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">before = function (dt, inc) {
+  var args = {dt: dt, inc: inc}
+  var result = this._cacheGet(&#x27;before&#x27;, args)
+  if (result === false) {
+    result = this._iter(new IterResult(&#x27;before&#x27;, args))
+    this._cacheAdd(&#x27;before&#x27;, result, args)
+  }
+  return result
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```javascript
+rule.between(new Date(2012, 7, 1), new Date(2012, 8, 1))
+[&#x27;Mon Aug 27 2012 10:30:00 GMT+0200 (CEST)&#x27;,
+ &#x27;Fri Aug 31 2012 10:30:00 GMT+0200 (CEST)&#x27;]
+```
+
+##### `RRule.prototype.<span class="apidocCodeKeywordSpan">before</span>(dt, inc=false)`
+
+Returns the last recurrence before the given `Date` instance. The `inc`
+argument defines what happens if `dt` is an occurrence. With
+`inc == true`, if `dt` itself is an occurrence, it will be returned.
+
+
+##### `RRule.prototype.after(dt, inc=false)`
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rrule.RRule.prototype.between" id="apidoc.element.rrule.RRule.prototype.between">
+        function <span class="apidocSignatureSpan">rrule.RRule.prototype.</span>between
+        <span class="apidocSignatureSpan">(after, before, inc, iterator)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">between = function (after, before, inc, iterator) {
+  var args = {
+    before: before,
+    after: after,
+    inc: inc
+  }
+
+  if (iterator) {
+    return this._iter(new CallbackIterResult(&#x27;between&#x27;, args, iterator))
+  }
+  var result = this._cacheGet(&#x27;between&#x27;, args)
+  if (result === false) {
+    result = this._iter(new IterResult(&#x27;between&#x27;, args))
+    this._cacheAdd(&#x27;between&#x27;, result, args)
+  }
+  return result
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+[&#x27;Fri Feb 03 2012 10:30:00 GMT+0100 (CET)&#x27;,
+ &#x27;Mon Mar 05 2012 10:30:00 GMT+0100 (CET)&#x27;,
+ &#x27;Fri Mar 09 2012 10:30:00 GMT+0100 (CET)&#x27;,
+ &#x27;Mon Apr 09 2012 10:30:00 GMT+0200 (CEST)&#x27;,
+ /* … */]
+
+// Get a slice:
+rule.<span class="apidocCodeKeywordSpan">between</span>(new Date(2012, 7, 1), new Date(2012, 8, 1))
+[&#x27;Mon Aug 27 2012 10:30:00 GMT+0200 (CEST)&#x27;,
+ &#x27;Fri Aug 31 2012 10:30:00 GMT+0200 (CEST)&#x27;]
+
+// Get an iCalendar RRULE string representation:
+// The output can be used with RRule.fromString().
+rule.toString()
+&#x22;FREQ=WEEKLY;DTSTART=20120201T093000Z;INTERVAL=5;UNTIL=20130130T230000Z;BYDAY=MO,FR&#x22;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rrule.RRule.prototype.clone" id="apidoc.element.rrule.RRule.prototype.clone">
+        function <span class="apidocSignatureSpan">rrule.RRule.prototype.</span>clone
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">clone = function () {
+  return new RRule(this.origOptions)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rrule.RRule.prototype.constructor" id="apidoc.element.rrule.RRule.prototype.constructor">
+        function <span class="apidocSignatureSpan">rrule.RRule.prototype.</span>constructor
+        <span class="apidocSignatureSpan">(options, noCache)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">constructor = function (options, noCache) {
+  options = options || {}
+  // RFC string
+  this._string = null
+  this._cache = noCache ? null : {
+    all: false,
+    before: [],
+    after: [],
+    between: []
+  }
+
+  // used by toString()
+  this.origOptions = {}
+
+  var invalid = []
+  var keys = Object.keys(options)
+  var defaultKeys = Object.keys(RRule.DEFAULT_OPTIONS)
+
+  // Shallow copy for origOptions and check for invalid
+  keys.forEach(function (key) {
+    this.origOptions[key] = options[key]
+    if (!contains(defaultKeys, key)) invalid.push(key)
+  }, this)
+
+  if (invalid.length) throw new Error(&#x27;Invalid options: &#x27; + invalid.join(&#x27;, &#x27;))
+
+  if (!RRule.FREQUENCIES[options.freq] &#x26;&#x26; options.byeaster === null) {
+    throw new Error(&#x27;Invalid frequency: &#x27; + String(options.freq))
+  }
+
+  // Merge in default options
+  defaultKeys.forEach(function (key) {
+    if (!contains(keys, key)) options[key] = RRule.DEFAULT_OPTIONS[key]
+  })
+
+  var opts = this.options = options
+
+  if (opts.byeaster !== null) opts.freq = RRule.YEARLY
+  if (!opts.dtstart) opts.dtstart = new Date()
+
+  var millisecondModulo = opts.dtstart.getTime() % 1000
+  if (opts.wkst === null) {
+    opts.wkst = RRule.MO.weekday
+  } else if (typeof opts.wkst === &#x27;number&#x27;) {
+    // cool, just keep it like that
+  } else {
+    opts.wkst = opts.wkst.weekday
+  }
+
+  if (opts.bysetpos !== null) {
+    if (typeof opts.bysetpos === &#x27;number&#x27;) opts.bysetpos = [opts.bysetpos]
+
+    for (var i = 0; i &#x3c; opts.bysetpos.length; i++) {
+      var v = opts.bysetpos[i]
+      if (v === 0 || !(v &#x3e;= -366 &#x26;&#x26; v &#x3c;= 366)) {
+        throw new Error(&#x27;bysetpos must be between 1 and 366,&#x27; +
+          &#x27; or between -366 and -1&#x27;)
+      }
+    }
+  }
+
+  if (!(plb(opts.byweekno) || plb(opts.byyearday) || plb(opts.bymonthday) ||
+    opts.byweekday !== null || opts.byeaster !== null)) {
+    switch (opts.freq) {
+      case RRule.YEARLY:
+        if (!opts.bymonth) opts.bymonth = opts.dtstart.getMonth() + 1
+        opts.bymonthday = opts.dtstart.getDate()
+        break
+      case RRule.MONTHLY:
+        opts.bymonthday = opts.dtstart.getDate()
+        break
+      case RRule.WEEKLY:
+        opts.byweekday = dateutil.getWeekday(opts.dtstart)
+        break
+    }
+  }
+
+  // bymonth
+  if (opts.bymonth !== null &#x26;&#x26; !(opts.bymonth instanceof Array)) {
+    opts.bymonth = [opts.bymonth]
+  }
+  // byyearday
+  if (opts.byyearday !== null &#x26;&#x26; !(opts.byyearday instanceof Array)) {
+    opts.byyearday = [opts.byyearday]
+  }
+
+  // bymonthday
+  if (opts.bymonthday === null) {
+    opts.bymonthday = []
+    opts.bynmonthday = []
+  } else if (opts.bymonthday instanceof Array) {
+    var bymonthday = []
+    var bynmonthday = []
+
+    for (i = 0; i &#x3c; opts.bymonthday.length; i++) {
+      v = opts.bymonthday[i]
+      if (v &#x3e; 0) {
+        bymonthday.push(v)
+      } else if (v &#x3c; 0) {
+        bynmonthday.push(v)
+      }
+    }
+    opts.bymonthday = bymonthday
+    opts.bynmonthday = bynmonthday
+  } else {
+    if (opts.bymonthday &#x3c; 0) {
+      opts.bynmonthday = [opts.bymonthday]
+      opts.bymonthday = []
+    } else {
+      opts.bynmonthday = []
+      opts.bymonthday = [opts.bymonthday]
+    }
+  }
+
+  // byweekno
+  if (opts.byweekno !== null &#x26;&#x26; !(opts.byweekno instanceof Array)) {
+    opts.byweekno = [opts.byweekno]
+  }
+
+  // byweekday / bynweekday
+  if (opts.byweekday === null) {
+    opts.bynweekday = null
+  } else if (typeof opts.byweekday === &#x27;number&#x27;) {
+    opts.byweekday = [opts.byweekday]
+    opts.bynweekday = null
+  } else if (opts.byweekday instanceof Weekday) {
+    if (!opts.byweekday.n || opts.freq &#x3e; RRule.MONTHLY) {
+      opts.byweekday = [opts.byweekday.weekday]
+      opts.bynweekday = null
+    } else {
+      opts.bynweekday = [
+        [opts.byweekday.weekday, opts.byweekday.n]
+      ]
+      opts.byweekday = null
+    }
+  } else {
+    var byweekday = []
+    var bynweekday = []
+
+    for (i = 0; i &#x3c; opts.byweekday.length; i++) {
+      var wday = opts.byweekday[i]
+
+      if (typeof wday === &#x27;number&#x27;) {
+        byweekday.push(wday)
+      } else if (!wday.n || opts.freq &#x3e; RRule.MONTHLY) {
+        byweekday.push(wday.weekday)
+      } else {
+        bynweekday.push([wda ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rrule.RRule.prototype.count" id="apidoc.element.rrule.RRule.prototype.count">
+        function <span class="apidocSignatureSpan">rrule.RRule.prototype.</span>count
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">count = function () {
+  return this.all().length
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rrule.RRule.prototype.isFullyConvertibleToText" id="apidoc.element.rrule.RRule.prototype.isFullyConvertibleToText">
+        function <span class="apidocSignatureSpan">rrule.RRule.prototype.</span>isFullyConvertibleToText
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isFullyConvertibleToText = function () {
+  return getnlp().isFullyConvertible(this)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  freq: RRule.WEEKLY,
+  count: 23
+})
+rule.toText()
+&#x22;every week for 23 times&#x22;
+```
+
+##### `RRule.prototype.<span class="apidocCodeKeywordSpan">isFullyConvertibleToText</span>()`
+
+Provides a hint on whether all the options the rule has are convertible
+to text.
+
+##### `RRule.fromText(text[, language])`
+
+Constructs an `RRule` instance from `text`.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rrule.RRule.prototype.toString" id="apidoc.element.rrule.RRule.prototype.toString">
+        function <span class="apidocSignatureSpan">rrule.RRule.prototype.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+  return RRule.optionsToString(this.origOptions)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// Get a slice:
+rule.between(new Date(2012, 7, 1), new Date(2012, 8, 1))
+[&#x27;Mon Aug 27 2012 10:30:00 GMT+0200 (CEST)&#x27;,
+ &#x27;Fri Aug 31 2012 10:30:00 GMT+0200 (CEST)&#x27;]
+
+// Get an iCalendar RRULE string representation:
+// The output can be used with RRule.fromString().
+rule.<span class="apidocCodeKeywordSpan">toString</span>()
+&#x22;FREQ=WEEKLY;DTSTART=20120201T093000Z;INTERVAL=5;UNTIL=20130130T230000Z;BYDAY=MO,FR&#x22;
+
+// Get a human-friendly text representation:
+// The output can be used with RRule.fromText().
+rule.toText()
+&#x22;every 5 weeks on Monday, Friday until January 31, 2013&#x22;
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rrule.RRule.prototype.toText" id="apidoc.element.rrule.RRule.prototype.toText">
+        function <span class="apidocSignatureSpan">rrule.RRule.prototype.</span>toText
+        <span class="apidocSignatureSpan">(gettext, language)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toText = function (gettext, language) {
+  return getnlp().toText(this, gettext, language)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```bash
+$ bower install rrule
+```
+
+Alternatively, download
+[rrule.js](https://raw.github.com/jakubroztocil/rrule/master/lib/rrule.js) manually. If
+you intend to use `RRule.prototype.<span class="apidocCodeKeywordSpan">toText</span>()` or `RRule.fromText()`, you&#x27;ll
+also need [nlp.js](https://raw.github.com/jakubroztocil/rrule/master/lib/nlp.js).
+
+```html
+&#x3c;script src=&#x22;rrule/lib/rrule.js&#x22;&#x3e;&#x3c;/script&#x3e;
+
+&#x3c;!-- Optional --&#x3e;
+&#x3c;script src=&#x22;rrule/lib/nlp.js&#x22;&#x3e;&#x3c;/script&#x3e;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rrule.RRuleSet" id="apidoc.module.rrule.RRuleSet">module rrule.RRuleSet</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rrule.RRuleSet.RRuleSet" id="apidoc.element.rrule.RRuleSet.RRuleSet">
+        function <span class="apidocSignatureSpan">rrule.</span>RRuleSet
+        <span class="apidocSignatureSpan">(noCache)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">RRuleSet = function (noCache) {
+  // Let RRuleSet cacheable
+  this._cache = noCache ? null : {
+    all: false,
+    before: [],
+    after: [],
+    between: []
+  }
+  this._rrule = []
+  this._rdate = []
+  this._exrule = []
+  this._exdate = []
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.rrule.RRuleSet.prototype" id="apidoc.module.rrule.RRuleSet.prototype">module rrule.RRuleSet.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.rrule.RRuleSet.prototype._cacheAdd" id="apidoc.element.rrule.RRuleSet.prototype._cacheAdd">
+        function <span class="apidocSignatureSpan">rrule.RRuleSet.prototype.</span>_cacheAdd
+        <span class="apidocSignatureSpan">(what, value, args)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_cacheAdd = function (what, value, args) {
+  if (!this._cache) return
+
+  if (value) {
+    value = (value instanceof Date)
+      ? dateutil.clone(value) : dateutil.cloneDates(value)
+  }
+
+  if (what === &#x27;all&#x27;) {
+    this._cache.all = value
+  } else {
+    args._value = value
+    this._cache[what].push(args)
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rrule.RRuleSet.prototype._cacheGet" id="apidoc.element.rrule.RRuleSet.prototype._cacheGet">
+        function <span class="apidocSignatureSpan">rrule.RRuleSet.prototype.</span>_cacheGet
+        <span class="apidocSignatureSpan">(what, args)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_cacheGet = function (what, args) {
+  if (!this._cache) return false
+
+  var cached = false
+  var argsKeys = args ? Object.keys(args) : []
+  var findCacheDiff = function (item) {
+    for (var key, i = 0; i &#x3c; argsKeys.length; i++) {
+      key = argsKeys[i]
+      if (String(args[key]) !== String(item[key])) return true
+    }
+    return false
+  }
+
+  if (what === &#x27;all&#x27;) {
+    cached = this._cache.all
+  } else {
+    // Let&#x27;s see whether we&#x27;ve already called the
+    // &#x27;what&#x27; method with the same &#x27;args&#x27;
+    for (var item, i = 0; i &#x3c; this._cache[what].length; i++) {
+      item = this._cache[what][i]
+      if (argsKeys.length &#x26;&#x26; findCacheDiff(item)) continue
+      cached = item._value
+      break
+    }
+  }
+
+  if (!cached &#x26;&#x26; this._cache.all) {
+    // Not in the cache, but we already know all the occurrences,
+    // so we can find the correct dates from the cached ones.
+    var iterResult = new IterResult(what, args)
+    for (i = 0; i &#x3c; this._cache.all.length; i++) {
+      if (!iterResult.accept(this._cache.all[i])) break
+    }
+    cached = iterResult.getValue()
+    this._cacheAdd(what, cached, args)
+  }
+
+  return cached instanceof Array
+    ? dateutil.cloneDates(cached)
+    : (cached instanceof Date ? dateutil.clone(cached) : cached)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rrule.RRuleSet.prototype._iter" id="apidoc.element.rrule.RRuleSet.prototype._iter">
+        function <span class="apidocSignatureSpan">rrule.RRuleSet.prototype.</span>_iter
+        <span class="apidocSignatureSpan">(iterResult)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_iter = function (iterResult) {
+  var _exdateHash = {}
+  var _exrule = this._exrule
+  var _accept = iterResult.accept
+
+  function evalExdate (after, before) {
+    _exrule.forEach(function (rrule) {
+      rrule.between(after, before, true).forEach(function (date) {
+        _exdateHash[Number(date)] = true
+      })
+    })
+  }
+
+  this._exdate.forEach(function (date) {
+    _exdateHash[Number(date)] = true
+  })
+
+  iterResult.accept = function (date) {
+    var dt = Number(date)
+    if (!_exdateHash[dt]) {
+      evalExdate(new Date(dt - 1), new Date(dt + 1))
+      if (!_exdateHash[dt]) {
+        _exdateHash[dt] = true
+        return _accept.call(this, date)
+      }
+    }
+    return true
+  }
+
+  if (iterResult.method === &#x27;between&#x27;) {
+    evalExdate(iterResult.args.after, iterResult.args.before)
+    iterResult.accept = function (date) {
+      var dt = Number(date)
+      if (!_exdateHash[dt]) {
+        _exdateHash[dt] = true
+        return _accept.call(this, date)
+      }
+      return true
+    }
+  }
+
+  for (var i = 0; i &#x3c; this._rdate.length; i++) {
+    if (!iterResult.accept(new Date(this._rdate[i]))) break
+  }
+
+  this._rrule.forEach(function (rrule) {
+    rrule._iter(iterResult)
+  })
+
+  var res = iterResult._result
+  dateutil.sort(res)
+  switch (iterResult.method) {
+    case &#x27;all&#x27;:
+    case &#x27;between&#x27;:
+      return res
+    case &#x27;before&#x27;:
+      return (res.length &#x26;&#x26; res[res.length - 1]) || null
+    case &#x27;after&#x27;:
+      return (res.length &#x26;&#x26; res[0]) || null
+    default:
+      return null
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rrule.RRuleSet.prototype.after" id="apidoc.element.rrule.RRuleSet.prototype.after">
+        function <span class="apidocSignatureSpan">rrule.RRuleSet.prototype.</span>after
+        <span class="apidocSignatureSpan">(dt, inc)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">after = function (dt, inc) {
+  var args = {dt: dt, inc: inc}
+  var result = this._cacheGet(&#x27;after&#x27;, args)
+  if (result === false) {
+    result = this._iter(new IterResult(&#x27;after&#x27;, args))
+    this._cacheAdd(&#x27;after&#x27;, result, args)
+  }
+  return result
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+##### `RRule.prototype.before(dt, inc=false)`
+
+Returns the last recurrence before the given `Date` instance. The `inc`
+argument defines what happens if `dt` is an occurrence. With
+`inc == true`, if `dt` itself is an occurrence, it will be returned.
+
+
+##### `RRule.prototype.<span class="apidocCodeKeywordSpan">after</span>(dt, inc=false)`
+
+Returns the first recurrence
+after the given `Date` instance. The `inc` argument defines what happens
+if `dt` is an occurrence. With `inc == true`, if `dt` itself is an
+occurrence, it will be returned.
+
+See also [python-dateutil](http://labix.org/python-dateutil/)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rrule.RRuleSet.prototype.all" id="apidoc.element.rrule.RRuleSet.prototype.all">
+        function <span class="apidocSignatureSpan">rrule.RRuleSet.prototype.</span>all
+        <span class="apidocSignatureSpan">(iterator)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">all = function (iterator) {
+  if (iterator) {
+    return this._iter(new CallbackIterResult(&#x27;all&#x27;, {}, iterator))
+  } else {
+    var result = this._cacheGet(&#x27;all&#x27;)
+    if (result === false) {
+      result = this._iter(new IterResult(&#x27;all&#x27;, {}))
+      this._cacheAdd(&#x27;all&#x27;, result)
+    }
+    return result
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  interval: 5,
+  byweekday: [RRule.MO, RRule.FR],
+  dtstart: new Date(2012, 1, 1, 10, 30),
+  until: new Date(2012, 12, 31)
+})
+
+// Get all occurrence dates (Date instances):
+rule.<span class="apidocCodeKeywordSpan">all</span>()
+[&#x27;Fri Feb 03 2012 10:30:00 GMT+0100 (CET)&#x27;,
+ &#x27;Mon Mar 05 2012 10:30:00 GMT+0100 (CET)&#x27;,
+ &#x27;Fri Mar 09 2012 10:30:00 GMT+0100 (CET)&#x27;,
+ &#x27;Mon Apr 09 2012 10:30:00 GMT+0200 (CEST)&#x27;,
+ /* … */]
+
+// Get a slice:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rrule.RRuleSet.prototype.before" id="apidoc.element.rrule.RRuleSet.prototype.before">
+        function <span class="apidocSignatureSpan">rrule.RRuleSet.prototype.</span>before
+        <span class="apidocSignatureSpan">(dt, inc)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">before = function (dt, inc) {
+  var args = {dt: dt, inc: inc}
+  var result = this._cacheGet(&#x27;before&#x27;, args)
+  if (result === false) {
+    result = this._iter(new IterResult(&#x27;before&#x27;, args))
+    this._cacheAdd(&#x27;before&#x27;, result, args)
+  }
+  return result
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```javascript
+rule.between(new Date(2012, 7, 1), new Date(2012, 8, 1))
+[&#x27;Mon Aug 27 2012 10:30:00 GMT+0200 (CEST)&#x27;,
+ &#x27;Fri Aug 31 2012 10:30:00 GMT+0200 (CEST)&#x27;]
+```
+
+##### `RRule.prototype.<span class="apidocCodeKeywordSpan">before</span>(dt, inc=false)`
+
+Returns the last recurrence before the given `Date` instance. The `inc`
+argument defines what happens if `dt` is an occurrence. With
+`inc == true`, if `dt` itself is an occurrence, it will be returned.
+
+
+##### `RRule.prototype.after(dt, inc=false)`
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rrule.RRuleSet.prototype.between" id="apidoc.element.rrule.RRuleSet.prototype.between">
+        function <span class="apidocSignatureSpan">rrule.RRuleSet.prototype.</span>between
+        <span class="apidocSignatureSpan">(after, before, inc, iterator)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">between = function (after, before, inc, iterator) {
+  var args = {
+    before: before,
+    after: after,
+    inc: inc
+  }
+
+  if (iterator) {
+    return this._iter(new CallbackIterResult(&#x27;between&#x27;, args, iterator))
+  }
+  var result = this._cacheGet(&#x27;between&#x27;, args)
+  if (result === false) {
+    result = this._iter(new IterResult(&#x27;between&#x27;, args))
+    this._cacheAdd(&#x27;between&#x27;, result, args)
+  }
+  return result
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+[&#x27;Fri Feb 03 2012 10:30:00 GMT+0100 (CET)&#x27;,
+ &#x27;Mon Mar 05 2012 10:30:00 GMT+0100 (CET)&#x27;,
+ &#x27;Fri Mar 09 2012 10:30:00 GMT+0100 (CET)&#x27;,
+ &#x27;Mon Apr 09 2012 10:30:00 GMT+0200 (CEST)&#x27;,
+ /* … */]
+
+// Get a slice:
+rule.<span class="apidocCodeKeywordSpan">between</span>(new Date(2012, 7, 1), new Date(2012, 8, 1))
+[&#x27;Mon Aug 27 2012 10:30:00 GMT+0200 (CEST)&#x27;,
+ &#x27;Fri Aug 31 2012 10:30:00 GMT+0200 (CEST)&#x27;]
+
+// Get an iCalendar RRULE string representation:
+// The output can be used with RRule.fromString().
+rule.toString()
+&#x22;FREQ=WEEKLY;DTSTART=20120201T093000Z;INTERVAL=5;UNTIL=20130130T230000Z;BYDAY=MO,FR&#x22;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rrule.RRuleSet.prototype.clone" id="apidoc.element.rrule.RRuleSet.prototype.clone">
+        function <span class="apidocSignatureSpan">rrule.RRuleSet.prototype.</span>clone
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">clone = function () {
+  var rrs = new RRuleSet(!!this._cache)
+  var i
+  for (i = 0; i &#x3c; this._rrule.length; i++) {
+    rrs.rrule(this._rrule[i].clone())
+  }
+  for (i = 0; i &#x3c; this._rdate.length; i++) {
+    rrs.rdate(new Date(this._rdate[i]))
+  }
+  for (i = 0; i &#x3c; this._exrule.length; i++) {
+    rrs.exrule(this._exrule[i].clone())
+  }
+  for (i = 0; i &#x3c; this._exdate.length; i++) {
+    rrs.exdate(new Date(this._exdate[i]))
+  }
+  return rrs
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rrule.RRuleSet.prototype.constructor" id="apidoc.element.rrule.RRuleSet.prototype.constructor">
+        function <span class="apidocSignatureSpan">rrule.RRuleSet.prototype.</span>constructor
+        <span class="apidocSignatureSpan">(noCache)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">constructor = function (noCache) {
+  // Let RRuleSet cacheable
+  this._cache = noCache ? null : {
+    all: false,
+    before: [],
+    after: [],
+    between: []
+  }
+  this._rrule = []
+  this._rdate = []
+  this._exrule = []
+  this._exdate = []
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rrule.RRuleSet.prototype.count" id="apidoc.element.rrule.RRuleSet.prototype.count">
+        function <span class="apidocSignatureSpan">rrule.RRuleSet.prototype.</span>count
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">count = function () {
+  return this.all().length
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rrule.RRuleSet.prototype.exdate" id="apidoc.element.rrule.RRuleSet.prototype.exdate">
+        function <span class="apidocSignatureSpan">rrule.RRuleSet.prototype.</span>exdate
+        <span class="apidocSignatureSpan">(date)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">exdate = function (date) {
+  if (!(date instanceof Date)) {
+    throw new TypeError(String(date) + &#x27; is not Date instance&#x27;)
+  }
+  if (!contains(this._exdate.map(Number), Number(date))) {
+    this._exdate.push(date)
+    dateutil.sort(this._exdate)
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+rruleSet.exrule(new r.RRule({
+ freq: RRule.MONTHLY,
+ count: 2,
+ dtstart: new Date(2012, 2, 1, 10, 30)
+}))
+
+// Add a exclusion date to rruleSet
+rruleSet.<span class="apidocCodeKeywordSpan">exdate</span>(new Date(2012, 5, 1, 10, 30))
+
+// Get all occurrence dates (Date instances):
+rruleSet.all()
+[&#x27;Wed Feb 01 2012 10:30:00 GMT+0800 (CST)&#x27;,
+&#x27;Tue May 01 2012 10:30:00 GMT+0800 (CST)&#x27;,
+&#x27;Sun Jul 01 2012 10:30:00 GMT+0800 (CST)&#x27;,
+&#x27;Mon Jul 02 2012 10:30:00 GMT+0800 (CST)&#x27;]
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rrule.RRuleSet.prototype.exrule" id="apidoc.element.rrule.RRuleSet.prototype.exrule">
+        function <span class="apidocSignatureSpan">rrule.RRuleSet.prototype.</span>exrule
+        <span class="apidocSignatureSpan">(rrule)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">exrule = function (rrule) {
+  if (!(rrule instanceof RRule)) {
+    throw new TypeError(String(rrule) + &#x27; is not RRule instance&#x27;)
+  }
+  if (!contains(this._exrule.map(String), String(rrule))) {
+    this._exrule.push(rrule)
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// Add a date to rruleSet
+rruleSet.rdate(new Date(2012, 6, 1, 10, 30))
+
+// Add another date to rruleSet
+rruleSet.rdate(new Date(2012, 6, 2, 10, 30))
+
+// Add a exclusion rrule to rruleSet
+rruleSet.<span class="apidocCodeKeywordSpan">exrule</span>(new r.RRule({
+  freq: RRule.MONTHLY,
+  count: 2,
+  dtstart: new Date(2012, 2, 1, 10, 30)
+}))
+
+// Add a exclusion date to rruleSet
+rruleSet.exdate(new Date(2012, 5, 1, 10, 30))
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rrule.RRuleSet.prototype.rdate" id="apidoc.element.rrule.RRuleSet.prototype.rdate">
+        function <span class="apidocSignatureSpan">rrule.RRuleSet.prototype.</span>rdate
+        <span class="apidocSignatureSpan">(date)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">rdate = function (date) {
+  if (!(date instanceof Date)) {
+    throw new TypeError(String(date) + &#x27; is not Date instance&#x27;)
+  }
+  if (!contains(this._rdate.map(Number), Number(date))) {
+    this._rdate.push(date)
+    dateutil.sort(this._rdate)
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+rruleSet.rrule(new RRule({
+freq: RRule.MONTHLY,
+count: 5,
+dtstart: new Date(2012, 1, 1, 10, 30)
+}))
+
+// Add a date to rruleSet
+rruleSet.<span class="apidocCodeKeywordSpan">rdate</span>(new Date(2012, 6, 1, 10, 30))
+
+// Add another date to rruleSet
+rruleSet.rdate(new Date(2012, 6, 2, 10, 30))
+
+// Add a exclusion rrule to rruleSet
+rruleSet.exrule(new r.RRule({
+freq: RRule.MONTHLY,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rrule.RRuleSet.prototype.rrule" id="apidoc.element.rrule.RRuleSet.prototype.rrule">
+        function <span class="apidocSignatureSpan">rrule.RRuleSet.prototype.</span>rrule
+        <span class="apidocSignatureSpan">(rrule)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">rrule = function (rrule) {
+  if (!(rrule instanceof RRule)) {
+    throw new TypeError(String(rrule) + &#x27; is not RRule instance&#x27;)
+  }
+  if (!contains(this._rrule.map(String), String(rrule))) {
+    this._rrule.push(rrule)
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+**RRuleSet:**
+```js
+var rruleSet = new RRuleSet()
+
+// Add a rrule to rruleSet
+rruleSet.<span class="apidocCodeKeywordSpan">rrule</span>(new RRule({
+  freq: RRule.MONTHLY,
+  count: 5,
+  dtstart: new Date(2012, 1, 1, 10, 30)
+}))
+
+// Add a date to rruleSet
+rruleSet.rdate(new Date(2012, 6, 1, 10, 30))
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rrule.RRuleSet.prototype.toString" id="apidoc.element.rrule.RRuleSet.prototype.toString">
+        function <span class="apidocSignatureSpan">rrule.RRuleSet.prototype.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+  return JSON.stringify(this.valueOf())
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// Get a slice:
+rule.between(new Date(2012, 7, 1), new Date(2012, 8, 1))
+[&#x27;Mon Aug 27 2012 10:30:00 GMT+0200 (CEST)&#x27;,
+ &#x27;Fri Aug 31 2012 10:30:00 GMT+0200 (CEST)&#x27;]
+
+// Get an iCalendar RRULE string representation:
+// The output can be used with RRule.fromString().
+rule.<span class="apidocCodeKeywordSpan">toString</span>()
+&#x22;FREQ=WEEKLY;DTSTART=20120201T093000Z;INTERVAL=5;UNTIL=20130130T230000Z;BYDAY=MO,FR&#x22;
+
+// Get a human-friendly text representation:
+// The output can be used with RRule.fromText().
+rule.toText()
+&#x22;every 5 weeks on Monday, Friday until January 31, 2013&#x22;
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.rrule.RRuleSet.prototype.valueOf" id="apidoc.element.rrule.RRuleSet.prototype.valueOf">
+        function <span class="apidocSignatureSpan">rrule.RRuleSet.prototype.</span>valueOf
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">valueOf = function () {
+  var result = []
+  if (this._rrule.length) {
+    this._rrule.forEach(function (rrule) {
+      result.push(&#x27;RRULE:&#x27; + rrule)
+    })
+  }
+  if (this._rdate.length) {
+    result.push(&#x27;RDATE:&#x27; + this._rdate.map(function (rdate) {
+      return dateutil.timeToUntilString(rdate)
+    }).join(&#x27;,&#x27;))
+  }
+  if (this._exrule.length) {
+    this._exrule.forEach(function (exrule) {
+      result.push(&#x27;EXRULE:&#x27; + exrule)
+    })
+  }
+  if (this._exdate.length) {
+    result.push(&#x27;EXDATE:&#x27; + this._exdate.map(function (exdate) {
+      return dateutil.timeToUntilString(exdate)
+    }).join(&#x27;,&#x27;))
+  }
+  return result
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+// Get a slice:
+rruleSet.between(new Date(2012, 2, 1), new Date(2012, 6, 2))
+[&#x27;Tue May 01 2012 10:30:00 GMT+0800 (CST)&#x27;,
+ &#x27;Sun Jul 01 2012 10:30:00 GMT+0800 (CST)&#x27;]
+
+ // To string
+rruleSet.<span class="apidocCodeKeywordSpan">valueOf</span>()
+[&#x27;RRULE:FREQ=MONTHLY;COUNT=5;DTSTART=20120201T023000Z&#x27;,
+ &#x27;RDATE:20120701T023000Z,20120702T023000Z&#x27;,
+ &#x27;EXRULE:FREQ=MONTHLY;COUNT=2;DTSTART=20120301T023000Z&#x27;,
+ &#x27;EXDATE:20120601T023000Z&#x27;]
+
+// To string
+rruleSet.toString()
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
